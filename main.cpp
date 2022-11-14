@@ -24,7 +24,7 @@ UINT_PTR processid(PEPROCESS process)
 		ExFreePoolWithTag(processinformation, 0x4e554c4c);
 		return NULL;
 	}
-	// now we just clean up and return the processID;
+	// now we just clean up to prevent memory/resource and return the processID;
 	KeUnstackDetachProcess(&state);
 	ExFreePoolWithTag(processinformation, 0x4e554c4c);
 	return processinformation->UniqueProcessId;
